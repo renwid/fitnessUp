@@ -8,6 +8,7 @@ class Menu extends CI_Controller
   {
     parent::__construct();
     //Not login yet, forces user to go to the login page, user cannot access /admin
+    $this->load->model('Menu_model');
     is_logged_in();
   }
 
@@ -40,13 +41,13 @@ class Menu extends CI_Controller
   }
 
 
-  public function deleteMenu()
+  //Menu Functions
+  public function edit($id)
   {
-    $data['title'] = 'Menu Management';
+    $data['title'] = 'Edit Menu Name';
     $data['user'] = $this->db->get_where('user', ['email' =>
     $this->session->userdata('email')])->row_array();
-
-    $data['menu'] = $this->db->get('user_menu')->result_array();
+    $data['menu'] = $this->Menu_model->getMenuById($id);
 
     $this->form_validation->set_rules('menu', 'Menu', 'required');
 
@@ -55,93 +56,35 @@ class Menu extends CI_Controller
       $this->load->view('templates/header', $data);
       $this->load->view('templates/sidebar', $data);
       $this->load->view('templates/topbar', $data);
-      $this->load->view('menu/index', $data);
+      $this->load->view('menu/edit', $data);
       $this->load->view('templates/footer');
     }
 
-    //If successfull, add the new menu
-    //Insert to table user_menu, data: menu->user input menu
     else{
-      $this->db->delete('user_menu', ['menu' => $this->input->post('menu')]);
-      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Delete Successful</div>');
+      $this->Menu_model->editMenu();
+      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Menu name has been updated</div>');
       redirect('menu');
+
     }
   }
 
-  public function deleteSubMenu()
+  public function delete($id) //taken from url
   {
-    $data['title'] = 'Menu Management';
+    $data['title'] = 'Submenu Management';
+
+
     $data['user'] = $this->db->get_where('user', ['email' =>
     $this->session->userdata('email')])->row_array();
+    $this->load->model('Menu_model', 'menu');
 
-    $data['title'] = $this->db->get('user_sub_menu')->result_array();
 
-    $this->form_validation->set_rules('title', 'Title', 'required');
-
-    if($this->form_validation->run() == false){
-      //Must be in order
-      $this->load->view('templates/header', $data);
-      $this->load->view('templates/sidebar', $data);
-      $this->load->view('templates/topbar', $data);
-      $this->load->view('menu/index', $data);
-      $this->load->view('templates/footer');
-    }
-
-    //If successfull, add the new menu
-    //Insert to table user_menu, data: menu->user input menu
-    else{
-      $this->db->delete('user_sub_menu', ['title' => $this->input->post('title')]);
-      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Delete Successful</div>');
-      redirect('menu/submenu');
-    }
+    $this->menu->deleteMenu($id);
+    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Menu Deleted</div>');
+    redirect('menu');
   }
 
 
-  public function editMenu()
-  {
-    $data['title'] = 'Menu Management';
-    $data['user'] = $this->db->get_where('user', ['email' =>
-    $this->session->userdata('email')])->row_array();
-
-    $data['menu'] = $this->db->get('user_menu')->result_array();
-    $data['id'] = $this->db->get('user_menu')->result_array();
-
-
-    $this->form_validation->set_rules('menu', 'Menu', 'required');
-    $this->form_validation->set_rules('id', 'Id', 'required');
-
-    if($this->form_validation->run() == false){
-      //Must be in order
-      $this->load->view('templates/header', $data);
-      $this->load->view('templates/sidebar', $data);
-      $this->load->view('templates/topbar', $data);
-      $this->load->view('menu/index', $data);
-      $this->load->view('templates/footer');
-    }
-
-    else
-    {
-      $menu = $this->input->post('menu');
-      $id = $this->input->post('id');
-
-      //UPDATE `user_menu` SET `menu` = 'd' WHERE `user_menu`.`id` = 6
-
-      // $this->db->set('menu', $menu);
-      // $this->db->where('user_menu'. '.' .'id', $id);
-      // $this->db->update('user_menu');
-
-      $data = array('menu' => $menu);
-
-      $where = "id = 6";
-
-      $str = $this->db->update_string('user_menu', $data, $where);
-
-      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">updated</div>');
-      redirect('menu');
-    }
-  }
-
-
+  //Sub Menu Functions
   public function subMenu()
   {
     $data['title'] = 'Submenu Management';
@@ -178,6 +121,77 @@ class Menu extends CI_Controller
       redirect('menu/submenu');
     }
 
+  }
+
+  public function deletesm($id)
+  {
+    $data['title'] = 'Submenu Management';
+
+    $data['user'] = $this->db->get_where('user', ['email' =>
+    $this->session->userdata('email')])->row_array();
+    $this->load->model('Menu_model', 'menu');
+
+    $this->menu->deleteSubMenu($id);
+    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Sub Menu Deleted</div>');
+    redirect('menu/submenu');
+  }
+
+  //Menu Functions
+  // public function edit($id)
+  // {
+  //   $data['title'] = 'Edit Menu Name';
+  //   $data['user'] = $this->db->get_where('user', ['email' =>
+  //   $this->session->userdata('email')])->row_array();
+  //   $data['menu'] = $this->Menu_model->getMenuById($id);
+  //
+  //   $this->form_validation->set_rules('menu', 'Menu', 'required');
+  //
+  //   if($this->form_validation->run() == false){
+  //     //Must be in order
+  //     $this->load->view('templates/header', $data);
+  //     $this->load->view('templates/sidebar', $data);
+  //     $this->load->view('templates/topbar', $data);
+  //     $this->load->view('menu/edit', $data);
+  //     $this->load->view('templates/footer');
+  //   }
+  //
+  //   else{
+  //     $this->Menu_model->editMenu();
+  //     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Menu name has been updated</div>');
+  //     redirect('menu');
+  //
+  //   }
+  // }
+
+  public function editsm($id) //Got this from url
+  {
+    $data['title'] = 'Submenu Management';
+    $data['user'] = $this->db->get_where('user', ['email' =>
+    $this->session->userdata('email')])->row_array();
+
+
+    $data['subMenu'] = $this->Menu_model->getSubMenuById($id); //id retrieved from method parameter
+    $data['menu'] = $this->db->get('user_menu')->result_array();
+
+    $this->form_validation->set_rules('title', 'Title', 'required');
+    $this->form_validation->set_rules('menu_id', 'Menu', 'required');
+    $this->form_validation->set_rules('url', 'URL', 'required');
+    $this->form_validation->set_rules('icon', 'icon', 'required');
+
+    if($this->form_validation->run() == false){
+      //Must be in order
+      $this->load->view('templates/header', $data);
+      $this->load->view('templates/sidebar', $data);
+      $this->load->view('templates/topbar', $data);
+      $this->load->view('menu/editsm', $data);
+      $this->load->view('templates/footer');
+    }
+
+    else{
+      $this->Menu_model->editSubMenu();
+      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Sub menu has been updated</div>');
+      redirect('menu/submenu');
+    }
   }
 
 

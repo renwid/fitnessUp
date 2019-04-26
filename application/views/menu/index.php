@@ -24,8 +24,8 @@
                         <th scope="row"><?= $i; ?></th>
                         <td><?= $m['menu']; ?></td>
                         <td>
-                          <a href="" data-toggle="modal" data-target="#editMenuModal" class="badge badge-success">edit</a>
-                          <a href="" data-toggle="modal" data-target="#deleteMenuModal" class="badge badge-danger">delete</a>
+                          <a href="<?= base_url(); ?>menu/edit/<?= $m['id']; ?>"  class="badge badge-success">edit</a>
+                          <a href="<?= base_url(); ?>menu/delete/<?= $m['id']; ?>"class="badge badge-danger" onclick="return confirm('sure?');">delete</a>
                         </td>
                     </tr>
                     <?php $i++; ?>
@@ -73,7 +73,7 @@
 </div>
 
 <!-- Delete Menu -->
-<div class="modal fade" id="deleteMenuModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="deleteMenuModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -86,7 +86,7 @@
         <div class="modal-body">
           <p style="color:red">Are you sure you want to delete:</p>
           <div class="form-group">
-            <input type="text" class="form-control" id="email" name="menu" value="<?= $m['menu'] ?>">
+            <input type="text" class="form-control" id="email" name="menu" value="<?= $m['menu'] ?>" readonly>
           </div>
         </div>
       <div class="modal-footer">
@@ -96,10 +96,10 @@
      </form>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- Edit Menu -->
-<div class="modal fade" id="editMenuModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="editMenuModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -108,10 +108,12 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="<?= base_url('menu/editMenu'); ?>" method="post">
+      <form action="<?= base_url(); ?>menu/edit/<?= $m['id']; ?>" method="post">
+        <input type="hidden" name="id" value="<?= $m['id']; ?>">
+
         <div class="modal-body">
           <p style="color:green">Enter new name</p>
-          <input type="text" class="form-control mt-3" id="id" name="menu" value="<?= $m['id'] ?>">
+          <input type="text" class="form-control mt-3" id="id" name="menu" value="<?= $m['id'] ?>" readonly>
           <div class="form-group">
             <input type="text" class="form-control" id="email" name="menu" value="<?= $m['menu'] ?>">
           </div>
@@ -123,4 +125,4 @@
      </form>
     </div>
   </div>
-</div>
+</div> -->
