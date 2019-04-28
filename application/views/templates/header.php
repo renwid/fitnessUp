@@ -12,7 +12,13 @@
   <title><?= $title; ?></title>
 
   <link rel="stylesheet" href="<?= base_url('assets'); ?>../css/chart.css">
+  <link rel="stylesheet" href="<?= base_url('assets'); ?>../css/datatables.min.css">
+
+  <link rel="stylesheet" href="<?= base_url('assets'); ?>../css/jquery-jvectormap-2.0.3.css">
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css"></style>
 
 
   <!-- Custom fonts for this template-->

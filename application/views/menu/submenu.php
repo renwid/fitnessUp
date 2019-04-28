@@ -18,7 +18,7 @@
 
             <a href="" class="btn btn-dark mb-3" data-toggle="modal" data-target="#newSubMenuModal">Add New Submenu</a>
 
-            <table class="table table-hover">
+            <table class="table table-hover" id="myTable">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
