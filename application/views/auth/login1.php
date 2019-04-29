@@ -1,3 +1,5 @@
+<canvas class='connecting-dots'></canvas>
+
 <div class="container" id="container">
 
   <!-- Sign Up -->
