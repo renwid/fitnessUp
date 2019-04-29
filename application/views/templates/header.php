@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="<?= base_url('assets'); ?>../css/chart.css">
   <link rel="stylesheet" href="<?= base_url('assets'); ?>../css/datatables.min.css">
 
-  <link rel="stylesheet" href="<?= base_url('assets'); ?>../css/jquery-jvectormap-2.0.3.css">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
@@ -27,7 +26,7 @@
 
   <!-- Custom styles for this template-->
   <link href="<?= base_url('assets'); ?>../css/sb-admin-2.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../admin/chart.css">
+  <link href="<?= base_url('assets'); ?>../css/chart.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
