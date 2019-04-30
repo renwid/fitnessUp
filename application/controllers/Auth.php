@@ -225,4 +225,115 @@ class Auth extends CI_Controller
     $this->load->view('auth/blocked');
   }
 
+  //Forgot PASSWORD
+  public function forgotPassword()
+  {
+    //Check if user inputs a valid email
+    $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+
+    //If email is not found in database, then fail
+    if($this->form_validation->run() == false)
+    {
+      $data['title'] = 'Forgot Password';
+      $this->load->view('templates/auth_header1');
+      $this->load->view('auth/forgot-password');
+      $this->load->view('templates/auth_footer1');
+    }else {
+      $email = $this->input->post('email');
+      //Check in database
+      $user = $this->db->get_where('user', ['email' => $email, 'is_active'=>1])->row_array(); //If found, insert into variable "user"
+
+      //If user found
+      if($user){
+        //Send token
+        $token = base64_encode(random_bytes(32)); //in Bytes
+        $user_token = [
+          'email' => $email,
+          'token' => $token,
+          'date_created' => time() //when the token is created, we can make this token expire
+        ];
+        $this->db->insert('user_token', $user_token);
+        $this->_sendEmail($token, 'forgot');
+        $this->session->set_flashdata('message', '<div style="margin-top:40px;margin-bottom:-50px;text-align:center;color:green"" role="alert">Please check your email to reset your password</div>');
+        redirect('auth/forgotpassword');
+
+      }else {
+        $this->session->set_flashdata('message', '<div style="margin-top:40px;margin-bottom:-50px;text-align:center;color:red"" role="alert">Email is not registered! or activated!</div>');
+        redirect('auth/forgotpassword');
+      }
+    }
+  }
+
+  //Check if link is valid
+  public function resetPassword(){
+    $email = $this->input->get('email');
+    $token = $this->input->get('token');
+
+    //Check if user is found in database
+    $user = $this->db->get_where('user', ['email' => $email])->row_array();
+
+    if($user){
+      //If email exists
+      $user_token = $this->db->get_where('user_token', ['token' => $token])
+      ->row_array();
+
+      //Check if token is valid
+      if($user_token){
+        //If token is valid
+        $this->session->set_userdata('reset_email', $email);
+        //Session only exists if user already check email
+        $this->changePassword();
+      }
+      else {
+        $this->session->set_flashdata('message', '<div style="margin-top:40px;margin-bottom:-50px;text-align:center;color:red"" role="alert">Invalid token</div>');
+        redirect('auth/forgotpassword');
+      }
+    }
+    //If user is not found
+    else{
+      $this->session->set_flashdata('message', '<div style="margin-top:40px;margin-bottom:-50px;text-align:center;color:red"" role="alert">Fail to reset password! Wrong email</div>');
+      redirect('auth/forgotpassword');
+    }
+  }
+
+  public function changePassword(){
+
+    //This method cant be accessed if email isnt accessed yet
+    if(!$this->session->userdata('reset_email')){
+      redirect('auth');
+    }
+
+    $this->form_validation->set_rules('password1', 'Password', 'trim|required|min_length[4]|matches[password2]');
+    $this->form_validation->set_rules('password2', 'Password', 'trim|required|min_length[4]|matches[password1]');
+
+    if($this->form_validation->run() == false)
+    {
+      $data['title'] = 'Change Password';
+      $this->load->view('templates/auth_header1');
+      $this->load->view('auth/change-password');
+      $this->load->view('templates/auth_footer1');
+    }
+    else
+    {
+      //Before updating password in databse, we encrypt first
+      $password = password_hash($this->input->post('password1'),
+      PASSWORD_DEFAULT);
+      $email = $this->session->userdata('reset_email');
+
+      $this->db->where('email', $email);
+
+      $this->db->set('password', $password);
+      $this->db->where('email', $email);
+      $this->db->update('user');
+
+      //Delete session
+      $this->session->unset_userdata('reset_email');
+
+      $this->session->set_flashdata('message', '<div style="margin-top:40px;margin-bottom:-50px;text-align:center;color:green"" role="alert">Password has been changed! Please Login</div>');
+      redirect('auth');
+
+    }
+
+  }
+
 }

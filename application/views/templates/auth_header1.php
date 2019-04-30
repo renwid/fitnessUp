@@ -9,6 +9,7 @@
     <!-- Background animation -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="<?= base_url('assets'); ?>../js/canvas.js"></script>
+    <script src="<?= base_url('assets'); ?>../js/load.js"></script>
 
 
   </head>

@@ -56,7 +56,7 @@
       <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
       <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
 
-			<a href="#">Forgot your password?</a>
+			<a href="<?= base_url('auth/forgotpassword') ?>">Forgot your password?</a>
 			<button type="submit" name="login" value="Login">Sign In</button>
 		</form>
 	</div>
