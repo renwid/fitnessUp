@@ -131,8 +131,8 @@ class Auth extends CI_Controller
     $config = [
       'protocol' => 'smtp', //simple mail transfer protocol
       'smtp_host' => 'ssl://smtp.googlemail.com',
-      'smtp_user' => 'widjajarenzo4@gmail.com',
-      'smtp_pass' => '',
+      'smtp_user' => 'boshi2pan@gmail.com',
+      'smtp_pass' => '72626744&p',
       'smtp_port' => 465,
       'mailtype' => 'html',
       'charset' => 'utf-8',
@@ -143,7 +143,7 @@ class Auth extends CI_Controller
     $this->email->initialize($config);
 
     //Get email ready
-    $this->email->from('widjajarenzo4@gmail.com', 'Renzo Widjaja');
+    $this->email->from('boshi2pan@gmail.com', 'boshipan');
 
     //Send to registered email
     $this->email->to($this->input->post('email'));
