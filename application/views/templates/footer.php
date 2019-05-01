@@ -52,9 +52,9 @@
 <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js'></script>
-<script src="<?= base_url('assets'); ?>../js/chart.js"></script>
-<script src="<?= base_url('assets'); ?>../js/Chart.bundle.js"></script>
-
+<!-- <script src="<?= base_url('assets'); ?>../js/chart.js"></script> -->
+<!-- <script src="<?= base_url('assets'); ?>../js/Chart.bundle.js"></script> -->
+<script src="<?= base_url('assets'); ?>../js/datatables.min.js"></script>
 <script>
 
   $('.custom-file-input').on('change', function() {
@@ -83,11 +83,11 @@
                 });
             </script>
 
-            <!-- <script>
+            <script>
 $(document).ready(function(){
     $('#myTable').dataTable();
 });
-</script> -->
+</script>
 
 </body>
 
