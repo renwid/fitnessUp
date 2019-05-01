@@ -161,6 +161,48 @@ class User extends CI_Controller
     }
   }
 
+  public function KCal()
+  {
+
+    $data['title'] = 'Food List';
+    $data['user'] = $this->db->get_where('user', ['email' =>
+    $this->session->userdata('email')])->row_array();
+    $this->load->model('Food_model', 'food');
+
+    // $data['subMenu'] = $this->menu->getSubMenu();
+    $data['food'] = $this->db->get('food')->result_array();
+
+    $this->form_validation->set_rules('title', 'Title', 'required');
+    $this->form_validation->set_rules('menu_id', 'Menu', 'required');
+    $this->form_validation->set_rules('url', 'URL', 'required');
+    $this->form_validation->set_rules('icon', 'icon', 'required');
+
+    if($this->form_validation->run() == false)
+    {
+      $this->load->view('templates/header', $data);
+      $this->load->view('templates/sidebar', $data);
+      $this->load->view('templates/topbar', $data);
+      $this->load->view('user/kcal', $data);
+      $this->load->view('templates/footer');
+    }else{
+      $data = [
+        'foodName' => $this->input->post('foodName'),
+        'foodCategoryID' => $this->input->post('foodCategoryID'),
+        'foodGI' => $this->input->post('foodGI'),
+        'foodGL' => $this->input->post('foodGL'),
+        'foodProtein' => $this->input->post('foodProtein'),
+        'foodCarbs' => $this->input->post('foodCarbs'),
+        'foodFat' => $this->input->post('foodFat'),
+        'foodCalorie' => $this ->input ->post('foodCalorie'),
+
+      ];
+      $this->db->insert('food', $data );
+      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">New submenu added!</div>');
+      redirect('user/kcal');
+    }
+
+  }
+
 
 
 
