@@ -1,76 +1,31 @@
-<!-- Begin Page Content -->
-<div class="container-fluid">
 
-    <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
-    <!-- <div class="container">
-              <div class="row">
-
-                  <div class="col-xs-4 aaa">
-                      <div class="panel panel-default">
-                          <div class="panel-heading">
-                              <h3 class="panel-title">Donut Chart</h3>
-                          </div>
-                          <div class="panel-content text-center">
-                              <canvas id="myDonutChart" class="chart"></canvas>
-                          </div>
-                      </div>
-                  </div>
-
-                                    <div class="col-xs-4">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">Donut Chart</h3>
-                                            </div>
-                                            <div class="panel-content text-center">
-                                                <canvas id="chartBar1" class="chart"></canvas>
-                                            </div>
-                                        </div>
-                                    </div>
-
-              </div>
-          </div> -->
-    <section class="content">
+        <!-- Begin Page Content -->
         <div class="container-fluid">
-            <div class="block-header">
 
-            </div>
-            <div class="row clearfix">
-                <!-- Line Chart -->
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2 style="text-align:center; font-size:20px; margin-top:20px">LINE CHART</h2>
-                            <ul class="header-dropdown m-r--5">
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <canvas id="line_chart" height="150"></canvas>
-                        </div>
+          <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
+          <div class="container">
+            <div class="row" style="margin-top:10em">
+              <div class="card mb-3 mx-auto mt-5" style="max-width: 540px;">
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <img src="..." class="card-img" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text" value="<?= $user['email'] ?>"></p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                     </div>
+                  </div>
                 </div>
-                <!-- #END# Line Chart -->
-                <!-- Bar Chart -->
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2 style="text-align:center; font-size:20px; margin-top:20px">BAR CHART</h2>
-                            <ul class="header-dropdown m-r--5">
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <canvas id="bar_chart" height="150"></canvas>
-                        </div>
-                    </div>
-                </div>
-                <!-- #END# Bar Chart -->
+              </div>
             </div>
 
+          </div>
         </div>
-    </section>
-</div>
-<!-- /.container-fluid -->
+        <!-- /.container-fluid -->
 
-</div>
-<!-- End of Main Content -->
+      </div>
+      <!-- End of Main Content -->

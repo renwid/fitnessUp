@@ -30,13 +30,21 @@ class User extends CI_Controller
     $data['user'] = $this->db->get_where('user', ['email' =>
     $this->session->userdata('email')])->row_array();
 
-    //Must be in order
-    $this->load->view('templates/header', $data);
-    $this->load->view('templates/sidebar', $data);
-    $this->load->view('templates/topbar', $data);
-    $this->load->view('user/progress', $data);
-    $this->load->view('templates/footer');
+    if($this->form_validation->run() == false)
+    {
+      //Must be in order
+      $this->load->view('templates/header', $data);
+      $this->load->view('templates/sidebar', $data);
+      $this->load->view('templates/topbar', $data);
+      $this->load->view('user/progress', $data);
+      $this->load->view('templates/footer');
+    }
+
+
+
   }
+
+
 
   public function edit()
   {

@@ -136,32 +136,6 @@ class Menu extends CI_Controller
     redirect('menu/submenu');
   }
 
-  //Menu Functions
-  // public function edit($id)
-  // {
-  //   $data['title'] = 'Edit Menu Name';
-  //   $data['user'] = $this->db->get_where('user', ['email' =>
-  //   $this->session->userdata('email')])->row_array();
-  //   $data['menu'] = $this->Menu_model->getMenuById($id);
-  //
-  //   $this->form_validation->set_rules('menu', 'Menu', 'required');
-  //
-  //   if($this->form_validation->run() == false){
-  //     //Must be in order
-  //     $this->load->view('templates/header', $data);
-  //     $this->load->view('templates/sidebar', $data);
-  //     $this->load->view('templates/topbar', $data);
-  //     $this->load->view('menu/edit', $data);
-  //     $this->load->view('templates/footer');
-  //   }
-  //
-  //   else{
-  //     $this->Menu_model->editMenu();
-  //     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Menu name has been updated</div>');
-  //     redirect('menu');
-  //
-  //   }
-  // }
 
   public function editsm($id) //Got this from url
   {
