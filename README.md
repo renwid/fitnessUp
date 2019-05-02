@@ -79,7 +79,9 @@ This website depends on all **8** tables in the fitnessUp database. One of them 
 Ofcourse, we couldn't have made it without the help of some frameworks. Below are the list:
 * [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
+* [WOW.JS](https://wowjs.uk/)
+* [Animate.CSS](https://daneden.github.io/animate.css/)
+* [Data Tables](https://datatables.net/)
 * [Anime.JS](https://animejs.com)
 ## <a href="https://animejs.com"><img src="images/animejs-v3-logo-animation.gif" width="130" alt="anime-js-v3-logo"/></a>
 
@@ -99,6 +101,34 @@ npm install npm@latest -g
 ```
 
 
+### Installation
+
+1. Clone the repo
+```sh
+git clone https:://github.com/your_username_/Project-Name.git
+```
+2. Install NPM packages
+```sh
+npm install
+```
+
+<!-- GETTING STARTED -->
+## Usage
+Now, lets demo the website shall we?
+
+1. Register your email
+![GIF](https://i.gyazo.com/e71a4f272d6da195e81f4be75e080f54.gif)
+
+2. You will receive an email notification
+<p align="center">
+  <a href="">
+    <img src="https://i.imgur.com/LAdv51C.png">
+  </a>
+</p>
+        
+3. Activate the token sent to your email and log in
+![GIF](https://i.gyazo.com/3be456f1e83fbe10eaab0051af33e781.gif)
+
 <!-- MARKDOWN LINKS & IMAGES -->
 [build-shield]: https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat-square
 [contributors-shield]: https://img.shields.io/badge/contributors-2-orange.svg?style=flat-square
@@ -108,3 +138,4 @@ npm install npm@latest -g
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: https://i.imgur.com/JDSKgSl.png
 [validator-screenshot]: https://i.imgur.com/gP2IU2R.png
+[emailvalid-screenshot]: https://i.imgur.com/LAdv51C.png
