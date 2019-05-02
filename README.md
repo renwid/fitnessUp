@@ -61,10 +61,10 @@ In addition we make sure that we are delivering the best design possible, one ex
 
 ![GIF](https://i.gyazo.com/76431a3bd26d74f302e53314dbaa2824.gif)
 
-***
-
  [![Validator][validator-screenshot]](https://i.imgur.com/gP2IU2R.png)
-
+ 
+ ***
+ 
 ### Database
 
 This website depends on all **8** tables in the fitnessUp database. One of them is the **food** table which we will take a look at below:
@@ -76,11 +76,12 @@ This website depends on all **8** tables in the fitnessUp database. One of them 
 |3     |Banana|1   |47   |11   |1.20|27.60|0.40|24.00 |
 
 ### Built With
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+Ofcourse, we couldn't have made it without the help of some frameworks. Below are the list:
 * [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
 * [Laravel](https://laravel.com)
-
+* [Anime.JS](https://animejs.com)
+## <a href="https://animejs.com"><img src="images/animejs-v3-logo-animation.gif" width="130" alt="anime-js-v3-logo"/></a>
 
 
 <!-- GETTING STARTED -->
