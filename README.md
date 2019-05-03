@@ -10,7 +10,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/renwid/fitnessUp">
     <img src="https://i.imgur.com/aIfzI2y.png" alt="Logo" width="370" height="300">
   </a>
 
@@ -126,8 +126,57 @@ Now, lets demo the website shall we?
   </a>
 </p>
         
-3. Activate the token sent to your email and log in
+3. Activate the token sent to your email :point_right: log in :point_right: profit.
 ![GIF](https://i.gyazo.com/3be456f1e83fbe10eaab0051af33e781.gif)
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+
+- **[MIT license](http://opensource.org/licenses/mit-license.php)**
+- Copyright 2019 © <a href="" target="_blank">FitnessUp</a>.
+
+
+
+<!-- CONTACT -->
+## Contact
+
+| <a href="http://www.google.com" target="_blank">**Renzo W**</a> | <a href="http://www.google.com" target="_blank">**Boshi "Boss" Pan**</a>
+| :---: | :---: |
+| [![renwid](https://i.imgur.com/8mkpIBh.jpg)](https://github.com/renwid) | [![boshi](https://i.imgur.com/6QYlNFw.jpg)](https://github.com/BoshiEddie) 
+| <a href="http://github.com/renwid" target="_blank">`github.com/renwid`</a> | <a href="http://github.com/BoshiEddie" target="_blank">`github.com/BoshiEddie`</a>
+
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
+* [Img Shields](https://shields.io)
+* [Choose an Open Source License](https://choosealicense.com)
+* [Codepen](https://codepen.com)
+* [HTML5Up](https://html5up.net)
+* [Animate.css](https://daneden.github.io/animate.css)
+* [Loaders.css](https://connoratherton.com/loaders)
+* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
+* [Font Awesome](https://fontawesome.com)
+* [Bootstrap Admin SB](https://startbootstrap.com)
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [build-shield]: https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat-square
