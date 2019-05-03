@@ -17,7 +17,7 @@
   <h3 align="center">Fitness Up</h3>
 
   <p align="center">
-    A Fitness Web App - Coming Soon
+    A Fitness Web App
     <br />
     <a href="https://github.com/renwid/fitnessApp"><strong>Explore the docs »</strong></a>
     <br />
