@@ -185,7 +185,7 @@ Contributions are what make the open source community such an amazing place to b
 [license-shield]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
 [license-url]: https://choosealicense.com/licenses/mit
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
+[linkedin-url]: https://linkedin.com/
 [product-screenshot]: https://i.imgur.com/JDSKgSl.png
 [validator-screenshot]: https://i.imgur.com/gP2IU2R.png
 [emailvalid-screenshot]: https://i.imgur.com/LAdv51C.png
