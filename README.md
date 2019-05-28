@@ -155,7 +155,7 @@ Contributions are what make the open source community such an amazing place to b
 <!-- CONTACT -->
 ## Contact
 
-| <a href="https://i.imgur.com/8mkpIBh.jpg" target="_blank">**Renzo W**</a> | <a href="https://i.imgur.com/8mkpIBh.jpg" target="_blank">**Boshi "Boss" Pan**</a>
+| <a href="https://i.imgur.com/8mkpIBh.jpg" target="_blank">**Renzo W**</a> | <a href="https://i.imgur.com/8mkpIBh.jpg" target="_blank">**Boshi Pan**</a>
 | :---: | :---: |
 | [![renwid](https://i.imgur.com/8mkpIBh.jpg)](https://github.com/renwid) | [![boshi](https://i.imgur.com/6QYlNFw.jpg)](https://github.com/BoshiEddie) 
 | <a href="http://github.com/renwid" target="_blank">`github.com/renwid`</a> | <a href="http://github.com/BoshiEddie" target="_blank">`github.com/BoshiEddie`</a>
